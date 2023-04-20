@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        #myHeader td {
+            border: 1.5px solid gray;
+        }
+    </style>
+    <body>
+        {% for table in tables %}
+        <table style="width: 100%">
+            {% for item in table %}
+            <tr>
+                {% for value in item %}
+                <td rowspan="{{value[1]}}" colspan="{{value[3]}}">
+                    {{value[4]}}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        {% endfor %}
+    </body>
+</html>
